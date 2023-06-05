@@ -1,3 +1,4 @@
+using _1erParcial_Luis_Miguel_Jerez.BLL;
 using _1erParcial_Luis_Miguel_Jerez.DAL;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<Context>(Options => Options.UseSqlite(ConStr));
 
 var app = builder.Build();
 
+builder.Services.AddScoped<IngresosBLL>();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
