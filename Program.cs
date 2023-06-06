@@ -14,9 +14,10 @@ var ConStr = builder.Configuration.GetConnectionString("ConStr");
 
 builder.Services.AddDbContext<Context>(Options => Options.UseSqlite(ConStr));
 
+builder.Services.AddScoped<IngresosBLL>();
+
 var app = builder.Build();
 
-builder.Services.AddScoped<IngresosBLL>();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
