@@ -56,6 +56,24 @@
                     <ValidationMessage For="@(() => ingresos.Monto)" />
                 </div>
 
+                <div class="card-header">
+                    <h3>Detalle</h3>
+                </div>
+
+                @*Emisor*@
+                <div class="mb-3">
+                    <label class="form-label">Emiror</label>
+                    <InputText @bind-Value="detalle.Emisor" class="form-control" />
+                    <ValidationMessage For="@(() => detalle.Emisor)" />
+                </div>
+
+                @*Mesanje*@
+                <div class="mb-3">
+                    <label class="form-label">Emiror</label>
+                    <InputText @bind-Value="detalle.Mensaje" class="form-control" />
+                    <ValidationMessage For="@(() => detalle.Mensaje)" />
+                </div>
+
             </div>
 
             <div class="card-footer d-flex justify-content-center">
@@ -74,6 +92,7 @@
     [Parameter]
     public int IngresoId { get; set; }
     public Ingresos ingresos { get; set; } = new Ingresos();
+    public Detalle detalle { get; set; } = new Detalle();
 
     protected override void OnInitialized()
     {
